@@ -1,0 +1,3 @@
+print(*map(sum, zip(
+    *[map(int, input().split()) for i in (1, 2, 3)]
+)))
