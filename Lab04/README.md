@@ -522,3 +522,173 @@ int main() {
 Операция `~x` инвертирует все биты числа, а прибавление единицы формирует дополнительный код противоположного по знаку числа.
 
 ![Демонстрация программы](09/01.png)
+
+# Практикум по Python
+
+## Задача 1
+
+```python
+a = int(input())
+print(a-a%15,a%15)
+```
+
+## Задача 2
+
+```python
+a = int(input())
+n = len(str(a))//2
+print(a%10**n+a//10**n)
+```
+
+## Задача 3
+
+```python
+a = int(input())
+print(round(a/3,3))
+```
+
+## Задача 4
+
+```python
+a = float(input())
+n = round(a*100)
+print(f"{n//100} rub {n%100} kop")
+```
+
+## Задача 5
+
+```python
+n,m,c,k = map(int,input().split())
+sheets = n * m
+need = max(0, sheets - k)
+packs = (need + 199) // 200
+print(packs * c)
+```
+
+## Задача 6
+
+```python
+n, m, k = map(int, input().split())
+candies = n * m
+boxes = (candies + k - 1) // k
+print(boxes)
+```
+
+## Задача 7
+
+```python
+import math
+
+n, t = input().split()
+n = int(n)
+t = float(t)
+pulse = n / t * 60
+print(math.ceil(pulse))
+```
+
+## Задача 8
+
+```python
+import math
+
+x, y = map(float, input().split())
+first = math.ceil(x)
+last = math.floor(y)
+answer = last - first + 1
+print(answer)
+```
+
+## Задача 9
+
+```python
+s = input()
+total = 0
+
+for i in s:
+    if i.isdigit():
+        total += int(i)
+
+print(total)
+```
+
+## Задача 10
+
+```python
+s = input()
+result = ""
+
+for i in s[::-1]:
+    if i == "(":
+        result += ")"
+    else:
+        result += "("
+
+print(result)
+```
+
+## Задача 11
+
+```python
+words = input().split()
+
+for word in words:
+    print(word[::-1], end=" ")
+```
+
+## Задача 12
+
+```python
+numbers = map(int, input().split())
+
+for n in numbers:
+    for d in range(2, n + 1):
+        if n % d == 0:
+            print(d, end=" ")
+            break
+```
+
+## Задача 13
+
+```python
+n = int(input())
+total = 0
+
+for i in range(1, n):
+    if n % i == 0:
+        total += i
+
+print(total)
+```
+
+## Задача 14
+
+```python
+n = int(input())
+masha = 0
+dasha = 0
+
+for i in range(n):
+    number = int(input())
+
+    if number % 3 == 0:
+        masha += 2
+    else:
+        dasha += 1
+
+print(masha, dasha, sep=":")
+```
+
+## Задача 15
+
+```python
+n = int(input())
+profit = 0
+
+for i in range(n):
+    price, cost = map(int, input().split())
+
+    if price > cost:
+        profit += price - cost
+
+print(profit)
+```
