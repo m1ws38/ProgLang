@@ -76,6 +76,22 @@ constexpr auto Pi4 = std::acos(x) * 2;
 
 В `task05.cpp` определены пространства `circle` и `square`. В каждом есть функция `area`, но конфликтов нет, поскольку полные имена различаются: `circle::area` и `square::area`.
  Это показывает основное назначение пространств имён — группировку сущностей и предотвращение конфликтов имён.
+```#include <iostream>
+
+namespace circle {
+constexpr double pi = 3.141592653589793;
+double area(double radius) { return pi * radius * radius; }
+}
+
+namespace square {
+double area(double side) { return side * side; }
+}
+
+int main() {
+    std::cout << "Circle: " << circle::area(2.0) << '\n';
+    std::cout << "Square: " << square::area(2.0) << '\n';
+}
+```
 
 ### Задание 6 **(2)**
 
